@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
-const registerSchema = new mongoose.Schema({
+const registerSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -10,7 +11,8 @@ const registerSchema = new mongoose.Schema({
     required: true,
   },
   event: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: "Event",
     required: true,
   },
 });
