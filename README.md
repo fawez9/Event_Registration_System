@@ -43,7 +43,7 @@ This is a simple event registration system built with Express.js, Node.js, and M
 
 ### Step 3 : Set up environment variables
 
-    - Create a **.env** file based on .env.example and configure it with your MongoDB connection string and Port needed to run the app.
+- Create a **.env** file based on .env.example and configure it with your MongoDB connection string and Port needed to run the app.
 
 ### Step 4 : Run the application
 
@@ -53,7 +53,7 @@ This is a simple event registration system built with Express.js, Node.js, and M
 
 ### Testing:
 
-    - You can test the API endpoints using tools like **Postman** or any other API testing tool of your choice.
+- You can test the API endpoints using tools like **Postman** or any other API testing tool of your choice.
 
 
 
