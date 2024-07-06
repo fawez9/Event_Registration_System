@@ -17,13 +17,18 @@ router.post("/", async (req, res) => {
     if (!event) {
       return res.status(404).json({ error: "Event not found" });
     }
+
+    const existingRegistration = await Register.findOne({ email: req.body.email, event: event._id });
+    if (existingRegistration) {
+      return res.status(400).json({ error: "User already registered for this event" });
+    }
+
     const newRegistration = await Register.create({ ...req.body, event: event._id });
     res.status(201).json({ message: "Registration Successful", registration: newRegistration });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 });
-
 router.put("/:id", async (req, res) => {
   try {
     const updatedRegistration = await Register.findByIdAndUpdate(req.params.id, { ...req.body, event: req.body.event._id }, { new: true });
